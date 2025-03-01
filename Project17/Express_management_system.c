@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS // 忽略scanf警告(vs)
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -804,6 +804,7 @@ void generate_reports() {
 
 // 主菜单实现
 int main() {
+    system("chcp 65001"); // 设置控制台编码为UTF-8,避免不使用visual studio时中文乱码
     srand(time(NULL)); // 初始化随机数
     create_data_dir(); // 创建数据目录
     load_all_data();   // 加载已有数据
